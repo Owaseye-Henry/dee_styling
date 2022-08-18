@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Dee styling | Shop</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" type="image/x-icon" href="/images/DeeFashionIMG2.png">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="/css/core-style.css">
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+    <!-- Search Wrapper Area Start -->
+    <div class="search-wrapper section-padding-100">
+        <div class="search-close">
+            <i class="fa fa-close" aria-hidden="true"></i>
+        </div>
+        <div class="container">
+            <div class="row purple">
+                <div class="col-12">
+                    <div class="search-content">
+                        <form action="#" method="get">
+                            <input type="search" name="search" id="search" placeholder="Type your keyword...">
+                            <button type="submit"><img src="img/core-img/search.png" alt=""></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Search Wrapper Area End -->
+
+    <!-- ##### Main Content Wrapper Start ##### -->
+    <div class="main-content-wrapper d-flex clearfix">
+
+        <!-- Mobile Nav (max width 767px)-->
+        <div class="mobile-nav">
+            <!-- Navbar Brand -->
+            <div class="amado-navbar-brand">
+
+                <!-- <a href="index.html"><img src="img/core-img/logo.png" alt=""></a> -->
+                <a href="/" style="color: black; font-size: 2rem;"><span style="color: purple; font-size:3rem; font-family: Sacramento;">D</span>ee styling</a>
+            </div>
+            <!-- Navbar Toggler -->
+            <div class="amado-navbar-toggler">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <!-- Header Area Start -->
+        <header class="header-area clearfix">
+            <!-- Close Icon -->
+            <div class="nav-close">
+                <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+            <!-- Logo -->
+            <div class="logo">
+                <a href="/" style="color: black; font-size: 2rem;"><span style="color: purple; font-size:3rem; font-family: Sacramento;">D</span>ee styling</a>
+                <!-- <a href="index.html"><img src="img/core-img/logo.png" alt=""></a> -->
+            </div>
+            <!-- Amado Nav -->
+            <nav class="amado-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li class=""><a href="/shop">Shop</a></li>
+                    <li class=""><a href="/dashboard">Dashboard</a></li>
+                
+                    
+                </ul>
+            </nav>
+            
+            <div class="cart-fav-search mb-100">
+                <a href="/cart" class="cart-nav purple"><img src="img/core-img/cart.png" alt=""> Cart <span class="cart_qty">(0)</span></a>
+               
+            </div>
+            
+        </header>
+        <!-- Header Area End -->
+
+
+        <script>
+            const cart_qty = document.querySelector(".cart_qty")
+           
+       
+
+           
+            document.addEventListener("DOMContentLoaded",update_cart)
+
+            function update_cart(e){
+             
+            const cart_add = [...document.querySelectorAll(".cart-add")]
+                const cart_remove =[... document.querySelectorAll(".cart-remove")]
+                console.log(cart_add,cart_remove, "na them")
+
+                if(cart_add ){
+                    console.log(cart_add, "is the array")
+                    cart_add.forEach(button => {button.addEventListener("click",()=>{
+                        const cart = localStorage.getItem("cart")
+                        const cartarr = JSON.parse(cart)
+                        console.log(cartarr.length, "is the number u looking for")
+                        cart_qty.innerText = '(' + cartarr.length +')'
+                    })})
+                }
+                  
+                if(cart_remove){
+                   cart_remove.forEach(button => {button.addEventListener("click",update_cart)})
+                }
+
+
+
+                const cart = localStorage.getItem("cart")
+                const cartarr = JSON.parse(cart)
+                console.log(cartarr.length, "is the number u looking for")
+                cart_qty.innerText = '(' + cartarr.length +')'
+            }
+        </script>

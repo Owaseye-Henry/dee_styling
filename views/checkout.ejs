@@ -1,0 +1,78 @@
+<%-include("header")%>
+
+        <div class="cart-table-area section-padding-100">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <div class="checkout_details_area mt-50 clearfix">
+
+                            <div class="cart-title">
+                                <h2>Checkout</h2>
+                            </div>
+
+                            <form class="checkout-form">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" name="firstname" class="form-control" id="first_name" value="" placeholder="First Name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" name="lastname" class="form-control" id="last_name" value="" placeholder="Last Name" required>
+                                    </div>
+                                   
+                                    <div class="col-12 mb-3">
+                                        <input type="email" name="customer_email" class="form-control" id="email" placeholder="Email" value="">
+                                    </div>
+                                    
+                                    <div class="col-12 mb-3">
+                                        <input type="text" name="customer_address" class="form-control mb-3" id="street_address" placeholder="Address" value="">
+                                    </div>
+                                   
+                                    <div class="col-md-6 mb-3">
+                                        <input type="number" name="customer_phone" class="form-control" id="phone_number" min="0" placeholder="Phone No" value="">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <textarea name="comment" name="customer_comment" class="form-control w-100" id="comment" cols="30" rows="10" placeholder="Leave a comment about your order"></textarea>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="cart-summary">
+                            <h5>Cart Total</h5>
+                            <ul class="summary-table">
+                                <li><span>subtotal:</span> <span id="subtotal-span">$140.00</span></li>
+                                <li><span>delivery:</span> <span>Free</span></li>
+                                <li><span>total:</span> <span id="total-span">$140.00</span></li>
+                            </ul>
+
+                            <div class="payment-method">
+                                <!-- Cash on delivery -->
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" id="cod" checked>
+                                    <label class="custom-control-label" for="cod">Cash on Delivery</label>
+                                </div>
+                                <!-- Paypal -->
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" id="paypal">
+                                    <label class="custom-control-label" for="paypal">flutterwave <img class="ml-15" src="img/core-img/paypal.png" alt=""></label>
+                                </div>
+                            </div>
+
+                            <div class="cart-btn mt-100">
+                                 <button id="checkout-btn" class="btn amado-btn w-100">Checkout</button>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Main Content Wrapper End ##### -->
+
+    <script src="/custom/checkout.js" async></script>
+    <script src="https://checkout.flutterwave.com/v3.js" async></script>
+
+  <%-include("footer")%>

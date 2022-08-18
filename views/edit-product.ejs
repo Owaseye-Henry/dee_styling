@@ -1,0 +1,62 @@
+<%-include("adminheader")%>
+
+<div class="cart-table-area section-padding-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-12">
+                <div class="checkout_details_area mt-50 clearfix">
+
+                    <div class="cart-title">
+                        <h2> Edit product</h2>
+                    </div>   
+
+             
+
+                    <form id="edit-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="hidden" name="id" id="id" value="<%=one._id%>">
+                                <input type="title" name="title" class="form-control" id="first_name" value="<%=one.title%>" placeholder="Enter product name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="number" name="price" class="form-control" id="last_name" value="<%=one.price%>" placeholder="price" required>
+                            </div>
+                           
+                            <div class="col-12 mb-3">
+                                <input type="file" name="image" class="form-control" id="email" placeholder="image" value="">
+                            </div>
+                           
+                            <div class="col-12 mb-3">
+                                <input type="number" name="quantity" class="form-control mb-3" id="" placeholder=" quantity in numbers" value="<%=one.quantity%>">
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <input type="number" name="stars" class="form-control" id="last_name" value="<%=one.stars%>" placeholder="rating( 1-5 stars)" required>
+                            </div>
+                     
+                            <div class="col-12 mb-3">
+                                <textarea name="comment" name="details" class="form-control w-100" id="comment" cols="30" rows="10" placeholder="description"><%=one.details%></textarea>
+                            </div>
+                            
+                            <div class="col-12 mb-3">
+                                 <button type="submit"  class="btn amado-btn w-100">add product</button>
+                                <!-- <a href="#" class="btn amado-btn w-100">add product</a> -->
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+</div>
+</div>
+
+
+<script src="/custom/edit_form_products.js"></script>
+
+<%-include("footer")%>
