@@ -58,7 +58,7 @@ const loggedout = (req,res,next)=>{
 
 
 //dbconnection
-mongoose.connect(``${process.env.DATABASE})
+mongoose.connect(`${process.env.DATABASE}`)
 .then(()=>console.log('database connected'))
 .catch((error)=>{console.log(`database connection error: ${error}`)})
 
