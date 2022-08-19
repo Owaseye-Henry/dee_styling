@@ -1,0 +1,119 @@
+<%-include("adminheader")%>
+<style>
+     .grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+         }
+
+    .pad{
+        padding: 1rem;
+        margin: auto;
+    }
+</style>
+
+<div class="cart-table-area section-padding-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-12">
+                <div class="checkout_details_area mt-50 clearfix">
+
+                    <div class="cart-title">
+                        <h2>Add product</h2>
+                    </div>
+
+                    <form id="add-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="title" name="title" class="form-control" id="first_name" value="" placeholder="Enter product name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="number" name="price" class="form-control" id="last_name" value="" placeholder="price" required>
+                            </div>
+                           
+                            <div class="col-12 mb-3">
+                                <input type="file" name="image" class="form-control" id="email" placeholder="image" value="">
+                            </div>
+                           
+                            <div class="col-12 mb-3">
+                                <input type="number" name="quantity" class="form-control mb-3" id="" placeholder=" quantity in numbers" value="">
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <input type="number" name="stars" class="form-control" id="last_name" value="" placeholder="rating( 1-5 stars)" required>
+                            </div>
+                     
+                            <div class="col-12 mb-3">
+                                <textarea name="comment" name="details" class="form-control w-100" id="comment" cols="30" rows="10" placeholder="description"></textarea>
+                            </div>
+                            
+                            <div class="col-12 mb-3">
+                                 <button type="submit"  class="btn amado-btn w-100">add product</button>
+                                <!-- <a href="#" class="btn amado-btn w-100">add product</a> -->
+                            </div>
+
+                        </div>
+                    </form>
+
+                     
+                    <div class="mt-50 clearfix grid products-grid"  id="product-div" >
+                        <h1 style="font-size: 3 rem; color:rgb(189, 185, 185)"> <i> There are no Items in Stock</i></h1>
+
+                     </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- galleries -->
+        <div class="row">
+            <div class="col-12 col-lg-12">
+                <div class="checkout_details_area mt-50 clearfix">
+
+                    <div class="cart-title">
+                        <h2> Upload to Gallery </h2>
+                    </div>
+
+                    <form id="gallery-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" name="title" class="form-control" id="first_name" value="" placeholder="image title" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="text" name="message" class="form-control" id="last_name" value="" placeholder="message ( 30 characters max)" required>
+                            </div>
+                           
+                            <div class="col-12 mb-3">
+                                <input type="file" name="image" class="form-control" id="g-img" placeholder="image file" value="">
+                            </div>
+                           
+                            
+                            
+                            <div class="col-12 mb-3">
+                                <button type="submit"  class="btn amado-btn w-100">Upload image</button>
+                               <!-- <a href="#" class="btn amado-btn w-100">add product</a> -->
+                           </div>
+
+                        </div>
+                    </form>
+
+                    <div class="mt-50 clearfix grid gallery-images"  id="gallery-div">
+                        <h1 style="font-size: 3 rem; color:rgb(189, 185, 185)"> <i> There are no Images in the gallery</i></h1>
+
+                     </div>
+            
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<script src="custom/admin.js"></script>
+
+<%-include("footer")%>
+
+

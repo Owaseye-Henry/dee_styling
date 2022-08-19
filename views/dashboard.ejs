@@ -1,0 +1,50 @@
+<%-include("header")%>
+<style> 
+    img{
+        max-width: 200px;
+    }
+</style>
+<div class="cart-table-area section-padding-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <div class="cart-title mt-50">
+                    <h2>Dashboard</h2>
+                </div>
+                 <p style="color:red;"> <i> please avoid making multiple orders until delivery of current order is made.</i></p>
+
+                <div class="cart-table clearfix">
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody class="cart-table" >
+                          
+                            <h1 style="font-size: 3 rem; color:rgb(189, 185, 185)"> <i> There are no current orders</i></h1>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="cart-summary">
+                    <h5>Order summary</h5>
+                    <ul class="summary-table">
+                        <li><span>subtotal:</span> <span class="order-sub-total">$140.00</span></li>
+                        <li><span>delivery:</span> <span>Free</span></li>
+                        <li><span>total:</span> <span class="order-total">$140.00</span></li>
+                    </ul>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- ##### Main Content Wrapper End ##### -->
+<script src="custom/dashboard.js"></script>
+<%-include("footer")%>

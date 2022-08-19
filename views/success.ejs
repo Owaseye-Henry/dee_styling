@@ -1,0 +1,22 @@
+<%-include("header")%>
+<div class="amado_product_area section-padding-100">
+    <div class="container-fluid">
+         <h1 style="font-size: 4rem;"><%=message%></h1>
+        <p>Thank you for your patronage</p>
+
+        <p><a href="/dashboard"> check your order</a></p>
+    </div>
+</div>
+
+<script>
+    fetch("/orders/get-paid-order")
+    .then(res => res.json)
+    .then(data =>{
+        localStorage.setItem("dee_current_order",JSON.stringify(data))
+    })
+
+
+    localStorage.removeItem("cart")     
+    localStorage.removeItem("total_cost")
+</script>
+<%_include("footer")%>

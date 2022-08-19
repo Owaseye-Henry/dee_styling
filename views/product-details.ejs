@@ -1,0 +1,125 @@
+<%-include("header")%>
+
+        <!-- Product Details Area Start -->
+        <div class="single-product-area section-padding-100 clearfix">
+            <div class="container-fluid">
+
+
+
+                <div class="row">
+                    <div class="col-12 col-lg-7">
+                        <div class="single_product_thumb">
+                            <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+                                
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <a class="gallery_img" href="<%=one.image%>">
+                                            <img class="d-block w-100" src="<%=one.image%>" alt="<%=one.title%>">
+                                        </a>
+                                    </div>
+                              
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <div class="single_product_desc">
+                            <!-- Product Meta Data -->
+                            <div class="product-meta-data">
+                                <div class="line"></div>
+                                <p class="product-price">#<%=one.price%></p>
+                                <a href="product-details.html">
+                                    <h6><%=one.title%></h6>
+                                </a>
+                                <!-- Ratings & Review -->
+                                <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
+                                    <div class="ratings">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </div>
+                                    
+                                </div>
+                                <!-- Avaiable -->
+                                <%if (one.quantity > 0){%>
+                                    <p class="avaibility"><i class="fa fa-circle"></i> In Stock</p>
+                                <%}else{%>
+                                    <p class="availbility"><i class="fa fa-circle" style="color:red"></i> Out of Stock</p>
+                                <%}%>
+                            </div>
+
+                            <div class="short_overview my-5">
+                                <p><%=one.details%></p>
+                            </div>
+
+                            <!-- Add to Cart Form -->
+                            <form class="cart clearfix">
+                                <div class="cart-btn d-flex mb-50">
+                                    <p>Qty</p>
+                                    <div class="quantity">
+                                        <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                                        <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity" value="1">
+                                        <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-caret-up" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                                <button type="" name="addtocart" value="5" class="btn amado-btn cart-add" data-id="<%=one._id%>" data-price="<%=one.price%>" data-image="<%=one.image%>" data-title="<%=one.title%>" >Add to cart</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product Details Area End -->
+    </div>
+    <!-- ##### Main Content Wrapper End ##### -->
+
+    <%-include("footer")%>
+
+    <script>
+        const add_to_cart = get_element(".cart-add")
+        const qty = get_element(".qty-text").value
+        
+       console.log(localStorage.getItem("cart"))
+       
+        let cart = []
+        if( localStorage.getItem("cart")){
+            cart = [...JSON.parse( localStorage.getItem("cart"))]
+            console.log(cart)
+        }
+        
+
+        const Id = add_to_cart.dataset.id
+        const Price = add_to_cart.dataset.price
+        const Image = add_to_cart.dataset.image
+        const Title = add_to_cart.dataset.title
+        const Total_price = Price
+        const Qty = qty
+
+        const item_obj = {Id,Title,Image,Price,Qty,Total_price}
+
+        
+        console.log(Id,Price,Image,Title)
+        add_to_cart.addEventListener("click",(e)=>{
+            e.preventDefault()
+            console.log(Id,Price,Image,Title)
+            const in_cart = cart.find(one=>one.Id == Id)
+            if(!in_cart) cart.push(item_obj)
+            
+            localStorage.setItem("cart",JSON.stringify(cart))
+            console.log(localStorage.getItem('cart'))
+
+        })
+
+       
+
+    
+
+
+        function get_element(element){
+            return document.querySelector(element)
+        }
+    </script>
+   
