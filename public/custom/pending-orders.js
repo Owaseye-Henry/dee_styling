@@ -95,9 +95,12 @@ function display_orders(){
         delete_button.forEach( button =>{
             const id = button.dataset.id
             button.addEventListener("click",()=>{
+                if(id){
                  delete_fetch("/orders/"+id)
                  .then(data=>console.log(data))
-                  display_orders()
+                  window.location = "/pending-orders"
+                }
+                display_orders()
             })
         })
     })
